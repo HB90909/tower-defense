@@ -21,16 +21,16 @@ document.getElementById("money").innerText = money;
 // CARGAR MAPA ALEATORIO
 // ----------------------
 async function cargarMapaAleatorio() {
-  const lista = await fetch("maps/maps.json").then(r => r.json());
+  const lista = await fetch("maps.json").then(r => r.json());
   const archivo = lista[Math.floor(Math.random() * lista.length)];
 
-  const mapa = await fetch("maps/" + archivo).then(r => r.json());
+  const mapa = await fetch("maps" + archivo).then(r => r.json());
 
   console.log("MAPA CARGADO:", mapa.name);
 
   path = mapa.path;
   towerSpots = mapa.towerSpots;
-  fondoActual = "assets/" + mapa.background;
+  fondoActual = "assets" + mapa.background;
 
   fondoImg.src = fondoActual;
 }
@@ -220,3 +220,4 @@ function gameLoop() {
 }
 
 gameLoop();
+
