@@ -80,7 +80,7 @@ canvas.addEventListener("click", e => {
   const x = e.clientX - rect.left;
   const y = e.clientY - rect.top;
 
-  // verificar spots válidos
+  // verificar spots vÃ¡lidos
   let valido = towerSpots.some(s => Math.hypot(s.x - x, s.y - y) < 20);
   if (!valido) return;
 
